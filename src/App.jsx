@@ -92,6 +92,9 @@ function App() {
             userDescription={cvData.userDescription}
           />
           <UserContact
+            handleChange={handleChange}
+            handleEdit={handleEdit}
+            currentEdit={currentEdit}
             email={cvData.email}
             phone={cvData.phone}
             location={cvData.location}

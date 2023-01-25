@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import InputEditable from './helpers/InputEditable';
+import InputEditable from './InputEditable';
 export default function EditableText(props) {
   return (
     <div className="action-wrap">

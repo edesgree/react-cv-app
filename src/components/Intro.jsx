@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EditableText from './EditableText';
+import EditableText from './helpers/EditableText';
 export default function Intro(props) {
   return (
     <div>
