@@ -62,6 +62,7 @@ h1 {
     top: 0;
   }
   &:hover .action {
+    cursor: pointer;
     display: inline-flex;
   }
 }
