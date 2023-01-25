@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+$green: #94d7a2;
+$pink: #f8bcbc;
+$blue: #4d5b9e;
+$dark-blue: #293264;
+$dark-white: #f5f7fb;
+$light-blue: #d6dbf5;
+$lighter-blue: #dbdef0;
+$light-yellow: #fffad1;
+$grey: #888;
+$purple: rgb(147 30 140);
+$cyan: #00ffb8;
+body {
+  align-items: center;
+  background: $dark-white;
+  background-image: url('blob-blue.png'), url('blob-yellow.png');
+  background-position: left bottom, right top;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  font-family: 'Karla', sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 114px 0px $light-blue;
+  -moz-box-shadow: 0px 0px 114px 0px $light-blue;
+  box-shadow: 0px 0px 114px 0px $light-blue;
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  min-height: 250px;
+  min-width: 250px;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+button {
+  background-color: transparent;
+  border: solid 1px $dark-blue;
+
+  border-radius: 7px;
+  //box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  &:hover {
+    background: $light-blue;
+  }
+  &.primary {
+    background: $purple;
+    border: none;
+    color: white;
+    &:hover {
+      background: $dark-blue;
+      color: white;
+    }
+  }
+  &.active {
+    background-color: $light-blue;
+    border: none;
+  }
+  &.desactive {
+    &,
+    &:hover {
+      background-color: transparent;
+      border-color: $light-blue;
+      color: $grey;
+    }
+
+    &.correct {
+      background-color: $green;
+      color: $dark-blue;
+    }
+    &.wrong {
+      background-color: $pink;
+    }
+  }
+}
+
+h1 {
+  background: -webkit-linear-gradient(left, $purple, $cyan);
+  background: -o-linear-gradient(right, $purple, $cyan);
+  background: -moz-linear-gradient(right, $purple, $cyan);
+  background: linear-gradient(to right, $purple, $cyan);
+  -webkit-background-clip: text;
+  font-size: 4em;
+  margin-top: 0;
+  -webkit-text-fill-color: transparent;
+}
