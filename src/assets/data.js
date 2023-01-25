@@ -16,6 +16,7 @@ const data = {
   interests: ['badminton', 'rock climbing', 'space science'],
   work: [
     {
+      id: 1,
       dateStart: '02-02-2020',
       dateEnd: '01-01-2022',
       jobTitle: 'webdesigner',
@@ -25,6 +26,7 @@ const data = {
       location: 'Paris, France'
     },
     {
+      id: 2,
       dateStart: '16-12-2018',
       dateEnd: '24-09-2022',
       jobTitle: 'adventurer',
@@ -36,6 +38,7 @@ const data = {
   ],
   education: [
     {
+      id: 1,
       dateGraduated: '16-12-2008',
       diplomaTitle: 'Maitrise audiovisuel & multimedia',
       schoolName: 'University of Marne la vallée',
