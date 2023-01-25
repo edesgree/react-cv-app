@@ -1,25 +1,17 @@
 const data = {
-  firstName: 'edouard',
-  lastName: 'desgree',
-  userJobTitle: 'front end developer',
+  firstName: 'Edouard',
+  lastName: 'Desgrée',
+  userJobTitle: 'Front-end developer',
   userDescription:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facer consectetur dolores accusantium error blanditiis quaerat deserunt  asperiores, necessitatibus, itaque aut voluptates eveniet venia.',
+    'My description ipsum dolor sit amet consectetur adipisicing elit. Facer consectetur dolores accusantium error blanditiis quaerat deserunt  asperiores, necessitatibus, itaque aut voluptates eveniet venia.',
   email: 'edouard@desgree.com',
   phone: '345-098-3333',
-  localisation: 'Montreal,Qc',
+  location: 'Montreal,Qc',
+  website: 'www.desgree.com',
   socials: [
-    {
-      name: 'facebook',
-      link: 'www.facebook.com'
-    },
-    {
-      name: 'github',
-      link: 'www.github.com'
-    },
-    {
-      name: 'instagram',
-      link: 'www.instagram.com'
-    }
+    { id: 1, name: 'facebook', url: 'http://www.facebook.com' },
+    { id: 2, name: 'github', url: 'http://www.github.com' },
+    { id: 3, name: 'instagram', url: 'http://www.instagram.com' }
   ],
   interests: ['badminton', 'rock climbing', 'space science'],
   work: [
