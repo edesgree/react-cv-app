@@ -5,6 +5,7 @@ import Intro from './components/Intro';
 import Socials from './components/Socials';
 import Work from './components/Work';
 import Education from './components/Education';
+import Input from './components/Input';
 import UserContact from './components/UserContact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -12,13 +13,26 @@ import {
   faEnvelope,
   faLink,
   faPhone,
-  faLocationDot
+  faLocationDot,
+  faPenToSquare,
+  faTrash,
+  faSave
 } from '@fortawesome/free-solid-svg-icons';
-library.add(faEnvelope, faLink, faPhone, faLocationDot);
+library.add(
+  faEnvelope,
+  faSave,
+  faLink,
+  faPhone,
+  faLocationDot,
+  faPenToSquare,
+  faTrash
+);
 
 function App() {
   const [count, setCount] = React.useState(0);
   const [editMode, setEditMode] = React.useState(false);
+  const [currentEdit, setCurrentEdit] = React.useState(null);
+  const [input, setInput] = React.useState('');
   const [cvData, setCvData] = React.useState(
     JSON.parse(localStorage.getItem('cvData')) || data
   );
@@ -32,6 +46,35 @@ function App() {
     localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log(cvData);
   }, [cvData]);
+
+  const handleChange = (event) => {
+    console.log('event.target.name', event.target.name);
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        [event.target.name]: event.target.value
+      };
+    });
+  };
+  const handleEdit = (index) => {
+    setCurrentEdit(index);
+    //setInput(items[index]);
+    console.log('currentEdit', currentEdit);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    /*if (input !== '') {
+      if (editing !== null) {
+        const newItems = [...items];
+        newItems[editing] = input;
+        setItems(newItems);
+        setEditing(null);
+      } else {
+        setItems([...items, input]);
+      }
+      setInput('');
+    }*/
+  };
   return (
     <main className="App columns">
       <aside className="column is-one-third ">
@@ -40,6 +83,9 @@ function App() {
             {editMode ? 'preview' : 'edit'}
           </button>
           <Intro
+            handleChange={handleChange}
+            handleEdit={handleEdit}
+            currentEdit={currentEdit}
             firstName={cvData.firstName}
             lastName={cvData.lastName}
             userJobTitle={cvData.userJobTitle}
@@ -59,7 +105,19 @@ function App() {
       </aside>
       <div className="column experiences">
         <header>
-          <h1 className="title is-1">React CV App</h1>
+          {!editMode ? (
+            <h1 className="title is-1">{cvData.mainTitle}</h1>
+          ) : (
+            <div className="form-control">
+              <Input
+                value={cvData.mainTitle}
+                handleChange={handleChange}
+                name="mainTitle"
+                type="text"
+              />
+            </div>
+          )}
+
           {editMode ? 'edit mode' : 'preview mode'}
         </header>
 

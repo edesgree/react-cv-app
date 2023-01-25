@@ -1,4 +1,5 @@
 const data = {
+  mainTitle: 'React CV App!',
   firstName: 'Edouard',
   lastName: 'Desgrée',
   userJobTitle: 'Front-end developer',

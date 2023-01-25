@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Socials(props) {
   const socialsElements = props.socials.map((item) => {
