@@ -46,12 +46,18 @@ main {
 }
 
 h1 {
-  background: -webkit-linear-gradient(left, $purple, $cyan);
-  background: -o-linear-gradient(right, $purple, $cyan);
-  background: -moz-linear-gradient(right, $purple, $cyan);
-  background: linear-gradient(to right, $purple, $cyan);
-  -webkit-background-clip: text;
   font-size: 4em;
   margin-top: 0;
-  -webkit-text-fill-color: transparent;
+}
+.is-gap-5 {
+  gap: 5px;
+}
+
+.action-wrap {
+  .action {
+    display: none;
+  }
+  &:hover .action {
+    display: inline-flex;
+  }
 }

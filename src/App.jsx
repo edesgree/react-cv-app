@@ -5,7 +5,7 @@ import Intro from './components/Intro';
 import Socials from './components/Socials';
 import Work from './components/Work';
 import Education from './components/Education';
-import Input from './components/Input';
+import InputField from './components/InputField';
 import UserContact from './components/UserContact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -109,7 +109,7 @@ function App() {
             <h1 className="title is-1">{cvData.mainTitle}</h1>
           ) : (
             <div className="form-control">
-              <Input
+              <InputField
                 value={cvData.mainTitle}
                 handleChange={handleChange}
                 name="mainTitle"
