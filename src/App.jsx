@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import data from './assets/data';
 import Interests from './components/Interests';
 import Intro from './components/Intro';
@@ -16,14 +16,21 @@ import {
 library.add(faEnvelope, faLink, faPhone, faLocationDot);
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [editMode, setEditMode] = useState(false);
+  const [count, setCount] = React.useState(0);
+  const [editMode, setEditMode] = React.useState(false);
+  const [cvData, setCvData] = React.useState(
+    JSON.parse(localStorage.getItem('cvData')) || data
+  );
 
   function handleEditButton(e) {
     e.preventDefault();
     setEditMode(!editMode);
     console.log('editMode', editMode);
   }
+  React.useEffect(() => {
+    localStorage.setItem('cvData', JSON.stringify(cvData));
+    console.log(cvData);
+  }, [cvData]);
   return (
     <main className="App columns">
       <aside className="column is-one-third ">
@@ -32,21 +39,21 @@ function App() {
             {editMode ? 'preview' : 'edit'}
           </button>
           <Intro
-            firstName={data.firstName}
-            lastName={data.lastName}
-            userJobTitle={data.userJobTitle}
-            userDescription={data.userDescription}
+            firstName={cvData.firstName}
+            lastName={cvData.lastName}
+            userJobTitle={cvData.userJobTitle}
+            userDescription={cvData.userDescription}
           />
           <UserContact
-            email={data.email}
-            phone={data.phone}
-            location={data.location}
-            website={data.website}
+            email={cvData.email}
+            phone={cvData.phone}
+            location={cvData.location}
+            website={cvData.website}
           />
           <h4>Socials</h4>
-          <Socials socials={data.socials} />
+          <Socials socials={cvData.socials} />
           <h4>Interests</h4>
-          <Interests interests={data.interests} />
+          <Interests interests={cvData.interests} />
         </div>
       </aside>
       <div className="column experiences">
