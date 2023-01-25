@@ -12,7 +12,7 @@ function App() {
 
   return (
     <main className="App columns">
-      <aside className="column is-one-third">
+      <aside className="column is-one-third content">
         <header>
           <img
             width="150"
@@ -40,17 +40,18 @@ function App() {
               <FontAwesomeIcon icon={faLocationDot} /> Nantes, France
             </li>
           </ul>
-          <div className="buttons">
-            <button className="button is-primary">Primary</button>
-            <button className="button is-link">Link</button>
-          </div>
-
-          <div className="buttons">
-            <button className="button is-info">Info</button>
-            <button className="button is-success">Success</button>
-            <button className="button is-warning">Warning</button>
-            <button className="button is-danger">Danger</button>
-          </div>
+          <h4>Socials</h4>
+          <ul>
+            <li>Facebook</li>
+            <li>Github</li>
+            <li>Instagram</li>
+          </ul>
+          <h4>Interests</h4>
+          <ul>
+            <li>badminton</li>
+            <li>rock climbing</li>
+            <li>space science</li>
+          </ul>
         </header>
       </aside>
       <div className="column experiences">
