@@ -5,7 +5,7 @@ import Intro from './components/Intro';
 import Socials from './components/Socials';
 import Work from './components/Work';
 import Education from './components/Education';
-import InputField from './components/InputField';
+import InputField from './components/helpers/InputField';
 import UserContact from './components/UserContact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
