@@ -17,11 +17,20 @@ library.add(faEnvelope, faLink, faPhone, faLocationDot);
 
 function App() {
   const [count, setCount] = useState(0);
+  const [editMode, setEditMode] = useState(false);
 
+  function handleEditButton(e) {
+    e.preventDefault();
+    setEditMode(!editMode);
+    console.log('editMode', editMode);
+  }
   return (
     <main className="App columns">
       <aside className="column is-one-third ">
         <div className="content">
+          <button className="button" onClick={handleEditButton}>
+            {editMode ? 'preview' : 'edit'}
+          </button>
           <Intro
             firstName={data.firstName}
             lastName={data.lastName}
@@ -41,7 +50,11 @@ function App() {
         </div>
       </aside>
       <div className="column experiences">
-        <h1 className="title is-1">React CV App</h1>
+        <header>
+          <h1 className="title is-1">React CV App</h1>
+          {editMode ? 'edit mode' : 'preview mode'}
+        </header>
+
         <h2 className="title">Work Experiences</h2>
         <div className="work-item columns">
           <div className="column">
