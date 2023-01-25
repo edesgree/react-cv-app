@@ -15,36 +15,42 @@ export default function Intro(props) {
           <EditableText
             currentEdit={props.currentEdit}
             editableName="firstName"
-            editableType="H1"
             handleChange={props.handleChange}
             editableTextContent={props.firstName}
             editableHandleSave={() => props.handleEdit(null)}
             editableHandleEdit={props.handleEdit}
           />
-        </h1>
-        {/*
-        {props.currentEdit === 'firstName' ? (
-          <InputEditable
-            inputValue={props.firstName}
+          <EditableText
+            currentEdit={props.currentEdit}
+            editableName="lastName"
             handleChange={props.handleChange}
-            inputName="firstName"
-            inputType="text"
-            handleSave={() => props.handleEdit(null)}
+            editableTextContent={props.lastName}
+            editableHandleSave={() => props.handleEdit(null)}
+            editableHandleEdit={props.handleEdit}
           />
-        ) : (
-          <div>
-            <h1 className="title">{props.firstName}</h1>
-            <FontAwesomeIcon
-              icon="fa-solid fa-pen-to-square"
-              color="rgb(147 30 140)"
-              onClick={() => props.handleEdit('firstName')}
-            />
-          </div>
-        )}*/}
-        <h1 className="title">{`${props.firstName} ${props.lastName}`}</h1>
-        <h2 className="subtitle">{props.userJobTitle}</h2>
+        </h1>
+
+        <h2 className="subtitle">
+          <EditableText
+            currentEdit={props.currentEdit}
+            editableName="userJobTitle"
+            handleChange={props.handleChange}
+            editableTextContent={props.userJobTitle}
+            editableHandleSave={() => props.handleEdit(null)}
+            editableHandleEdit={props.handleEdit}
+          />
+        </h2>
       </header>
-      <p>{props.userDescription} </p>
+
+      <EditableText
+        currentEdit={props.currentEdit}
+        editableName="userDescription"
+        handleChange={props.handleChange}
+        editableTextContent={props.userDescription}
+        editableHandleSave={() => props.handleEdit(null)}
+        editableHandleEdit={props.handleEdit}
+        inputType="textarea"
+      />
     </div>
   );
 }

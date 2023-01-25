@@ -9,7 +9,7 @@ export default function EditableText(props) {
           inputValue={props.editableTextContent}
           handleChange={props.handleChange}
           inputName={props.editableName}
-          inputType="text"
+          inputType={props.inputType}
           handleSave={props.editableHandleSave}
         />
       ) : (

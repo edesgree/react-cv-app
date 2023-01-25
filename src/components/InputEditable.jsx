@@ -8,7 +8,7 @@ export default function Input(props) {
         value={props.inputValue}
         handleChange={props.handleChange}
         name={props.inputName}
-        type={props.inputType}
+        inputType={props.inputType}
       />
       <FontAwesomeIcon
         icon="fas fa-save"
