@@ -8,7 +8,7 @@ $blue: #4d5b9e;
 $dark-blue: #293264;
 $dark-white: #f5f7fb;
 $light-blue: #d6dbf5;
-$lighter-blue: #dbdef0;
+$lighter-blue: #e2e6ee;
 $light-yellow: #fffad1;
 $grey: #888;
 $purple: rgb(147 30 140);
@@ -26,14 +26,13 @@ body {
 
 main {
   background-color: whitesmoke;
-  border-radius: 15px;
-  -webkit-box-shadow: 0px 0px 114px 0px $light-blue;
-  -moz-box-shadow: 0px 0px 114px 0px $light-blue;
-  box-shadow: 0px 0px 114px 0px $light-blue;
 
-  min-height: 250px;
-  min-width: 250px;
-  padding: 20px;
+  aside {
+    background-color: $lighter-blue;
+    .content {
+      padding: 20px;
+    }
+  }
 }
 
 h1 {
