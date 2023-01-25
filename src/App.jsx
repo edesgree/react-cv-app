@@ -7,6 +7,7 @@ import Work from './components/Work';
 import Education from './components/Education';
 import InputField from './components/helpers/InputField';
 import UserContact from './components/UserContact';
+import Photo from './components/Photo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -82,6 +83,7 @@ function App() {
           <button className="button" onClick={handleEditButton}>
             {editMode ? 'preview' : 'edit'}
           </button>
+          <Photo />
           <Intro
             handleChange={handleChange}
             handleEdit={handleEdit}

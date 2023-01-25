@@ -65,3 +65,8 @@ h1 {
     display: inline-flex;
   }
 }
+.user-photo {
+  img:hover {
+    cursor: pointer;
+  }
+}
