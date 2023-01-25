@@ -10,6 +10,7 @@ export default function Input(props) {
         name={props.inputName}
         inputType={props.inputType}
       />
+
       <FontAwesomeIcon
         icon="fas fa-save"
         size="xs"

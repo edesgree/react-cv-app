@@ -15,13 +15,15 @@ export default function EditableText(props) {
       ) : (
         <span className="is-flex is-align-items-center is-gap-5">
           {props.editableTextContent}
-          <FontAwesomeIcon
-            className="action action-save"
-            icon="fa-solid fa-pen-to-square"
-            size="xs"
-            color="rgb(147 30 140)"
-            onClick={() => props.editableHandleEdit(props.editableName)}
-          />
+          <span className="action action-save icon-holder">
+            <FontAwesomeIcon
+              className=""
+              icon="fa-solid fa-pen-to-square"
+              size="xs"
+              color="rgb(147 30 140)"
+              onClick={() => props.editableHandleEdit(props.editableName)}
+            />
+          </span>
         </span>
       )}
     </div>

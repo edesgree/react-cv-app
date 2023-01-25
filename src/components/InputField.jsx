@@ -21,5 +21,7 @@ export default function Input(props) {
         cols="50"
       />
     );
+  } else {
+    return 'input has no type';
   }
 }

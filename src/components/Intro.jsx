@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import InputEditable from './InputEditable';
+
 import EditableText from './EditableText';
 export default function Intro(props) {
   return (
@@ -19,6 +18,7 @@ export default function Intro(props) {
             editableTextContent={props.firstName}
             editableHandleSave={() => props.handleEdit(null)}
             editableHandleEdit={props.handleEdit}
+            inputType="text"
           />
           <EditableText
             currentEdit={props.currentEdit}
@@ -27,6 +27,7 @@ export default function Intro(props) {
             editableTextContent={props.lastName}
             editableHandleSave={() => props.handleEdit(null)}
             editableHandleEdit={props.handleEdit}
+            inputType="text"
           />
         </h1>
 
@@ -38,6 +39,7 @@ export default function Intro(props) {
             editableTextContent={props.userJobTitle}
             editableHandleSave={() => props.handleEdit(null)}
             editableHandleEdit={props.handleEdit}
+            inputType="text"
           />
         </h2>
       </header>

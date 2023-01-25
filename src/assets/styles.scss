@@ -54,8 +54,12 @@ h1 {
 }
 
 .action-wrap {
+  position: relative;
   .action {
     display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   &:hover .action {
     display: inline-flex;
