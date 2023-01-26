@@ -9,6 +9,7 @@ import Education from './components/Education';
 import InputField from './components/helpers/InputField';
 import UserContact from './components/UserContact';
 import Photo from './components/Photo';
+import { nanoid } from 'nanoid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -46,7 +47,8 @@ function App() {
   }
   React.useEffect(() => {
     //localStorage.setItem('cvData', JSON.stringify(cvData));
-    console.log(cvData);
+    console.log('cvData', cvData);
+    console.log('current edit:', currentEdit);
   }, [cvData]);
   /**
    * Simple text items
@@ -101,14 +103,20 @@ function App() {
   /**
    * EDUCATION
    */
-  const handleEducationChange = (newSchool) => {
-    const updatedEducation = cvData.experience.map((school) => {
-      return school.id == newSchool.id ? newSchool : school;
-    });
+  const handleEducationEdit = (newSchool) => {
+    console.log('newSchool', newSchool.id);
+    console.log('handleEducationEdit', cvData);
+
     setCvData((prevData) => {
       return {
         ...prevData,
-        education: updatedEducation
+        education: prevData.education.map((item) => {
+          if (item.id === newSchool.id) {
+            return newSchool;
+          } else {
+            return item;
+          }
+        })
       };
     });
   };
@@ -119,7 +127,7 @@ function App() {
         education: [
           ...prevData.education,
           {
-            id: 44444,
+            id: nanoid(),
             dateGraduated: '16-12-2008',
             diplomaTitle: 'new school diploma',
             schoolName: 'new school name',
@@ -129,6 +137,13 @@ function App() {
       };
     });
     console.log('add school', cvData);
+  };
+  const handleEducationDelete = (id) => {
+    setCvData((prevData) => ({
+      ...prevData,
+      education: prevData.education.filter((item) => item.id !== id)
+    }));
+    console.log('handleEducationDelete', id);
   };
   return (
     <main className="App columns">
@@ -194,7 +209,12 @@ function App() {
         />
         <Education
           handleAdd={handleEducationAdd}
+          handleDelete={handleEducationDelete}
+          handleEdit={handleEducationEdit}
           education={cvData.education}
+          currentEdit={currentEdit}
+          resetCurrent={() => handleEdit(null)}
+          setCurrent={handleEdit}
         />
       </div>
     </main>

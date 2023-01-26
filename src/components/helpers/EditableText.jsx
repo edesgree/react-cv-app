@@ -14,7 +14,7 @@ export default function EditableText(props) {
         />
       ) : (
         <span className="is-flex is-align-items-center is-gap-5">
-          {props.editableTextContent}
+          letext:{props.editableTextContent}
           <span className="action action-save icon-holder">
             <FontAwesomeIcon
               className=""

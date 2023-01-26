@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 const data = {
   mainTitle: 'React CV App!',
   firstName: 'Edouard',
@@ -10,18 +11,18 @@ const data = {
   location: 'Montreal,Qc',
   website: 'www.desgree.com',
   socials: [
-    { id: 1, name: 'facebook', url: 'http://www.facebook.com' },
-    { id: 2, name: 'github', url: 'http://www.github.com' },
-    { id: 3, name: 'instagram', url: 'http://www.instagram.com' }
+    { id: nanoid(), name: 'facebook', url: 'http://www.facebook.com' },
+    { id: nanoid(), name: 'github', url: 'http://www.github.com' },
+    { id: nanoid(), name: 'instagram', url: 'http://www.instagram.com' }
   ],
   interests: [
-    { id: '1', name: 'badminton' },
-    { id: '2', name: 'rock climbing' },
-    { id: '3', name: 'space science' }
+    { id: nanoid(), name: 'badminton' },
+    { id: nanoid(), name: 'rock climbing' },
+    { id: nanoid(), name: 'space science' }
   ],
   work: [
     {
-      id: 1,
+      id: nanoid(),
       dateStart: '02-02-2020',
       dateEnd: '01-01-2022',
       jobTitle: 'webdesigner',
@@ -31,7 +32,7 @@ const data = {
       location: 'Paris, France'
     },
     {
-      id: 2,
+      id: nanoid(),
       dateStart: '16-12-2018',
       dateEnd: '24-09-2022',
       jobTitle: 'adventurer',
@@ -43,11 +44,18 @@ const data = {
   ],
   education: [
     {
-      id: 1,
+      id: nanoid(),
       dateGraduated: '16-12-2008',
       diplomaTitle: 'Maitrise audiovisuel & multimedia',
       schoolName: 'University of Marne la vallée',
       notes: 'some notes about the curriculum'
+    },
+    {
+      id: nanoid(),
+      dateGraduated: '12-12-2008',
+      diplomaTitle: 'school2',
+      schoolName: 'University school',
+      notes: 'some notes'
     }
   ]
 };
