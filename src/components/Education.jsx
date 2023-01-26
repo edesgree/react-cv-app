@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditableText from './helpers/EditableText';
 import { nanoid } from 'nanoid';
 import Button from './helpers/Button';
+import InputField from './helpers/InputField';
 export default function Education(props) {
   const [edit, setEdit] = React.useState(false);
   const [formEducationData, setFormEducationData] = React.useState({});
@@ -48,33 +49,34 @@ export default function Education(props) {
       <li key={item.id} name={item.id}>
         <div className="education-item">
           {edit && item.id === props.currentEdit ? (
-            <div>
-              <input
-                type="text"
-                placeholder={formEducationData.diplomaTitle}
-                onChange={handleChange}
-                name="diplomaTitle"
+            <div className="field">
+              <InputField
                 value={formEducationData.diplomaTitle}
+                handleChange={handleChange}
+                name="diplomaTitle"
+                inputType="text"
+                placeholder="Diploma title"
               />
-              <input
-                type="text"
-                placeholder="schoolName"
-                onChange={handleChange}
-                name="schoolName"
+              <InputField
                 value={formEducationData.schoolName}
+                handleChange={handleChange}
+                name="schoolName"
+                inputType="text"
+                placeholder="School Name"
               />
-              <input
-                type="text"
-                placeholder="dateGraduated"
-                onChange={handleChange}
-                name="dateGraduated"
+              <InputField
                 value={formEducationData.dateGraduated}
+                handleChange={handleChange}
+                name="dateGraduated"
+                inputType="text"
+                placeholder="Date Graduated"
               />
-              <textarea
+              <InputField
                 value={formEducationData.notes}
-                placeholder="notes"
-                onChange={handleChange}
+                handleChange={handleChange}
                 name="notes"
+                inputType="textarea"
+                placeholder="Notes"
               />
             </div>
           ) : (
