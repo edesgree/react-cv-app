@@ -15,9 +15,9 @@ const data = {
     { id: 3, name: 'instagram', url: 'http://www.instagram.com' }
   ],
   interests: [
-    { id: 1, name: 'badminton' },
-    { id: 2, name: 'rock climbing' },
-    { id: 3, name: 'space science' }
+    { id: '1', name: 'badminton' },
+    { id: '2', name: 'rock climbing' },
+    { id: '3', name: 'space science' }
   ],
   work: [
     {

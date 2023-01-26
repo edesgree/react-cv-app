@@ -91,7 +91,7 @@ function App() {
     console.log('handleSkillDelete', id);
     setCvData((prevData) => ({
       ...prevData,
-      interests: prevData.interests.filter((item) => item.id !== parseInt(id))
+      interests: prevData.interests.filter((item) => item.id !== id)
     }));
     console.log('delete skill', cvData);
   };
