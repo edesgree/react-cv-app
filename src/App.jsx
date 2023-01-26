@@ -35,7 +35,7 @@ function App() {
   const [count, setCount] = React.useState(0);
   const [editMode, setEditMode] = React.useState(false);
   const [currentEdit, setCurrentEdit] = React.useState(null);
-  const [input, setInput] = React.useState('');
+
   const [cvData, setCvData] = React.useState(
     JSON.parse(localStorage.getItem('cvData')) || data
   );
@@ -46,10 +46,13 @@ function App() {
     console.log('editMode', editMode);
   }
   React.useEffect(() => {
+    // save CV data to storage
     //localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log('cvData', cvData);
-    console.log('current edit:', currentEdit);
   }, [cvData]);
+  React.useEffect(() => {
+    console.log('current edit:', currentEdit);
+  }, [currentEdit]);
   /**
    * Simple text items
    */
@@ -64,23 +67,9 @@ function App() {
   };
   const handleEdit = (index) => {
     setCurrentEdit(index);
-    //setInput(items[index]);
-    console.log('currentEdit', currentEdit);
+    //console.log('currentEdit', currentEdit);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    /*if (input !== '') {
-      if (editing !== null) {
-        const newItems = [...items];
-        newItems[editing] = input;
-        setItems(newItems);
-        setEditing(null);
-      } else {
-        setItems([...items, input]);
-      }
-      setInput('');
-    }*/
-  };
+
   /**
    * SKILLS / INTERESTS
    */
@@ -106,7 +95,7 @@ function App() {
   const handleEducationEdit = (newSchool) => {
     console.log('newSchool', newSchool.id);
     console.log('handleEducationEdit', cvData);
-
+    // if school in edit mode, we get update the new school object in the main CVdata object
     setCvData((prevData) => {
       return {
         ...prevData,
@@ -129,21 +118,19 @@ function App() {
           {
             id: nanoid(),
             dateGraduated: '16-12-2008',
-            diplomaTitle: 'new school diploma',
-            schoolName: 'new school name',
-            notes: 'new school notes'
+            diplomaTitle: 'My diploma title',
+            schoolName: 'School name',
+            notes: 'some notes'
           }
         ]
       };
     });
-    console.log('add school', cvData);
   };
   const handleEducationDelete = (id) => {
     setCvData((prevData) => ({
       ...prevData,
       education: prevData.education.filter((item) => item.id !== id)
     }));
-    console.log('handleEducationDelete', id);
   };
   return (
     <main className="App columns">
@@ -213,7 +200,6 @@ function App() {
           handleEdit={handleEducationEdit}
           education={cvData.education}
           currentEdit={currentEdit}
-          resetCurrent={() => handleEdit(null)}
           setCurrent={handleEdit}
         />
       </div>

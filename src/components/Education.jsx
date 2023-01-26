@@ -2,10 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditableText from './helpers/EditableText';
 import { nanoid } from 'nanoid';
+import Button from './helpers/button';
 export default function Education(props) {
   const [edit, setEdit] = React.useState(false);
-
-  const [currentEditId, setCurrentEditId] = React.useState(null);
   const [formEducationData, setFormEducationData] = React.useState({});
 
   const handleAdd = (event) => {
@@ -15,36 +14,26 @@ export default function Education(props) {
   const handleEdit = (event) => {
     setEdit(true);
     props.setCurrent(event.currentTarget.id);
-    setCurrentEditId(event.currentTarget.id);
-    console.log('currentEdit', props.currentEdit);
+    //setCurrentEditId(event.currentTarget.id);
+    //console.log('currentEdit', props.currentEdit);
     console.log('event.currentTarget.id', event.currentTarget.id);
 
     setFormEducationData(
       props.education.filter((item) => item.id === event.currentTarget.id)[0]
     );
-    console.log('handle edit FormEducationData', formEducationData);
-    console.log(
-      'education data filtered witu current target id',
-      props.education.filter((item) => item.id === event.currentTarget.id)
-    );
-    console.log('currentTarget', event.currentTarget.id);
-    console.log('Target', event.target.id);
   };
 
   const handleDelete = (event) => {
-    //setSkillName('');
     props.handleDelete(event.currentTarget.id);
   };
   const handleSave = () => {
-    props.handleEdit(formEducationData);
-
-    props.setCurrent('');
-    props.resetCurrent;
-    setEdit(false);
-    console.log('save', formEducationData);
     //send new object to be added to global data
+    props.handleEdit(formEducationData);
+    props.setCurrent('');
+    setEdit(false);
   };
   function handleChange(event) {
+    // update current local data object
     const { name, value, type, checked } = event.target;
     setFormEducationData((prevFormData) => {
       return {
@@ -52,19 +41,13 @@ export default function Education(props) {
         [name]: type === 'checkbox' ? checked : value
       };
     });
-    //console.log('formEducationData', formEducationData);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    //props.handleEdit(formEducationData);
-    console.log('formEducationData', formEducationData);
-  }
+
   const educationElements = props.education.map((item) => {
-    console.log('educationElements id', item.id);
     return (
       <li key={item.id} name={item.id}>
         <div className="education-item">
-          {edit && item.id === currentEditId ? (
+          {edit && item.id === props.currentEdit ? (
             <div>
               <input
                 type="text"
@@ -104,31 +87,37 @@ export default function Education(props) {
           )}
         </div>
 
-        {edit && item.id === currentEditId ? (
-          <button name="edit" id={item.id} onClick={handleSave}>
-            <FontAwesomeIcon
-              id={item.id}
-              icon="fas fa-save"
-              size="xs"
-              color="rgb(147 30 140)"
-            />
-          </button>
+        {edit && item.id === props.currentEdit ? (
+          <Button
+            name="save"
+            id={item.id}
+            action={handleSave}
+            iconSize="xs"
+            iconSymbol="fa-save"
+            text=""
+          />
         ) : (
-          <div>
-            <button name="edit" id={item.id} onClick={handleEdit}>
-              <FontAwesomeIcon
-                icon="fas fa-pen-to-square"
-                size="xs"
-                color="rgb(147 30 140)"
+          <div className="field has-addons">
+            <p className="control">
+              <Button
+                name="edit"
+                id={item.id}
+                action={handleEdit}
+                iconSize="xs"
+                iconSymbol="fa-pen-to-square"
+                text=""
               />
-            </button>
-            <button name="delete" id={item.id} onClick={handleDelete}>
-              <FontAwesomeIcon
-                icon="fas fa-trash"
-                size="xs"
-                color="rgb(147 30 140)"
+            </p>
+            <p className="control">
+              <Button
+                name="delete"
+                id={item.id}
+                action={handleDelete}
+                iconSize="xs"
+                iconSymbol="fa-trash"
+                text=""
               />
-            </button>
+            </p>
           </div>
         )}
       </li>
@@ -139,6 +128,13 @@ export default function Education(props) {
       <h2 className="title">Education</h2>
       <ul className="education-elements">{educationElements}</ul>
       <button onClick={handleAdd}>add</button>
+      <Button
+        name="add"
+        action={handleAdd}
+        iconSize="xs"
+        iconSymbol="fa-trash"
+        text="add"
+      />
     </section>
   );
 }
