@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditableText from './helpers/EditableText';
 import { nanoid } from 'nanoid';
-import Button from './helpers/button';
+import Button from './helpers/Button';
 export default function Education(props) {
   const [edit, setEdit] = React.useState(false);
   const [formEducationData, setFormEducationData] = React.useState({});
@@ -127,13 +127,12 @@ export default function Education(props) {
     <section>
       <h2 className="title">Education</h2>
       <ul className="education-elements">{educationElements}</ul>
-      <button onClick={handleAdd}>add</button>
       <Button
         name="add"
         action={handleAdd}
         iconSize="xs"
-        iconSymbol="fa-trash"
-        text="add"
+        iconSymbol="fa-plus"
+        text="Add school"
       />
     </section>
   );

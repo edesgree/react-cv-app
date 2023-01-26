@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { nanoid } from 'nanoid';
+import Button from './helpers/Button';
 export default function Interests(props) {
   const [skillName, setSkillName] = React.useState('');
   const [skillId, setSkillId] = React.useState(nanoid());
@@ -26,13 +27,15 @@ export default function Interests(props) {
     return (
       <li key={interest.id}>
         {interest.name}
-        <button name="delete" id={interest.id} onClick={handleDelete}>
-          <FontAwesomeIcon
-            icon="fas fa-trash"
-            size="xs"
-            color="rgb(147 30 140)"
-          />
-        </button>
+
+        <Button
+          name="delete"
+          id={interest.id}
+          action={handleDelete}
+          iconSize="xs"
+          iconSymbol="fa-trash"
+          text=""
+        />
       </li>
     );
   });
