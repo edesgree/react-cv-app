@@ -1,5 +1,6 @@
 import React from 'react';
 import data from './assets/data';
+import ErrorBoundary from './components/ErrorBoundary';
 import Interests from './components/Interests';
 import Intro from './components/Intro';
 import Socials from './components/Socials';
@@ -44,7 +45,7 @@ function App() {
     console.log('editMode', editMode);
   }
   React.useEffect(() => {
-    localStorage.setItem('cvData', JSON.stringify(cvData));
+    //localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log(cvData);
   }, [cvData]);
 
@@ -76,6 +77,24 @@ function App() {
       setInput('');
     }*/
   };
+  const handleSkillAdd = (skillAdd, idAdd) => {
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        interests: cvData.interests.concat({ id: idAdd, name: skillAdd })
+      };
+    });
+    console.log('add skill');
+  };
+
+  const handleSkillDelete = (id) => {
+    console.log('handleSkillDelete', id);
+    setCvData((prevData) => ({
+      ...prevData,
+      interests: prevData.interests.filter((item) => item.id !== parseInt(id))
+    }));
+    console.log('delete skill', cvData);
+  };
   return (
     <main className="App columns">
       <aside className="column is-one-third ">
@@ -102,10 +121,16 @@ function App() {
             location={cvData.location}
             website={cvData.website}
           />
-          <h4>Socials</h4>
+
           <Socials socials={cvData.socials} />
-          <h4>Interests</h4>
-          <Interests interests={cvData.interests} />
+
+          <ErrorBoundary>
+            <Interests
+              add={handleSkillAdd}
+              delete={handleSkillDelete}
+              interests={cvData.interests}
+            />
+          </ErrorBoundary>
         </div>
       </aside>
       <div className="column experiences">
@@ -126,7 +151,12 @@ function App() {
           {editMode ? 'edit mode' : 'preview mode'}
         </header>
 
-        <Work work={cvData.work} />
+        <Work
+          handleChange={handleChange}
+          handleEdit={handleEdit}
+          currentEdit={currentEdit}
+          work={cvData.work}
+        />
         <Education education={cvData.education} />
       </div>
     </main>

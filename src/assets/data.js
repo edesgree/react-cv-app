@@ -14,7 +14,11 @@ const data = {
     { id: 2, name: 'github', url: 'http://www.github.com' },
     { id: 3, name: 'instagram', url: 'http://www.instagram.com' }
   ],
-  interests: ['badminton', 'rock climbing', 'space science'],
+  interests: [
+    { id: 1, name: 'badminton' },
+    { id: 2, name: 'rock climbing' },
+    { id: 3, name: 'space science' }
+  ],
   work: [
     {
       id: 1,

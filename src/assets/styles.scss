@@ -71,3 +71,10 @@ h1 {
     cursor: pointer;
   }
 }
+
+.list-item {
+  li {
+    display: flex;
+    gap: 5px;
+  }
+}

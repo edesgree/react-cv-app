@@ -11,5 +11,10 @@ export default function Socials(props) {
       </li>
     );
   });
-  return <ul className="user-socials">{socialsElements}</ul>;
+  return (
+    <div>
+      <h4>Socials</h4>
+      <ul className="user-socials">{socialsElements}</ul>
+    </div>
+  );
 }
