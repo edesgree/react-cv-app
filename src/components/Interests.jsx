@@ -39,8 +39,8 @@ export default function Interests(props) {
   return (
     <div>
       <h4>Interests</h4>
-      <div class="field has-addons">
-        <div class="control">
+      <div className="field has-addons">
+        <div className="control">
           <input
             value={skillName}
             onChange={handleChange}
@@ -50,7 +50,7 @@ export default function Interests(props) {
             className="input is-small"
           />
         </div>
-        <div class="control">
+        <div className="control">
           <button className="button is-info is-small" onClick={handleSubmit}>
             Add +
           </button>

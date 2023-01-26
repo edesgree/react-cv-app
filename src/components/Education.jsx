@@ -2,6 +2,17 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Education(props) {
+  const handleAdd = (event) => {
+    event.preventDefault();
+    props.handleAdd();
+  };
+  const handleChange = (event) => {
+    //setSkillName(event.target.value);
+  };
+  const handleDelete = (event) => {
+    //setSkillName('');
+    //props.delete(event.currentTarget.id);
+  };
   const educationElements = props.education.map((item) => {
     return (
       <li key={item.id}>
@@ -18,6 +29,7 @@ export default function Education(props) {
     <section>
       <h2 className="title">Education</h2>
       <ul className="education-elements">{educationElements}</ul>
+      <button onClick={handleAdd}>add</button>
     </section>
   );
 }

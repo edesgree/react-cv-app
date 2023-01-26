@@ -48,7 +48,9 @@ function App() {
     //localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log(cvData);
   }, [cvData]);
-
+  /**
+   * Simple text items
+   */
   const handleChange = (event) => {
     console.log('event.target.name', event.target.name);
     setCvData((prevData) => {
@@ -77,6 +79,9 @@ function App() {
       setInput('');
     }*/
   };
+  /**
+   * SKILLS / INTERESTS
+   */
   const handleSkillAdd = (skillAdd, idAdd) => {
     setCvData((prevData) => {
       return {
@@ -88,12 +93,42 @@ function App() {
   };
 
   const handleSkillDelete = (id) => {
-    console.log('handleSkillDelete', id);
     setCvData((prevData) => ({
       ...prevData,
       interests: prevData.interests.filter((item) => item.id !== id)
     }));
-    console.log('delete skill', cvData);
+  };
+  /**
+   * EDUCATION
+   */
+  const handleEducationChange = (newSchool) => {
+    const updatedEducation = cvData.experience.map((school) => {
+      return school.id == newSchool.id ? newSchool : school;
+    });
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        education: updatedEducation
+      };
+    });
+  };
+  const handleEducationAdd = () => {
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        education: [
+          ...prevData.education,
+          {
+            id: 44444,
+            dateGraduated: '16-12-2008',
+            diplomaTitle: 'new school diploma',
+            schoolName: 'new school name',
+            notes: 'new school notes'
+          }
+        ]
+      };
+    });
+    console.log('add school', cvData);
   };
   return (
     <main className="App columns">
@@ -157,7 +192,10 @@ function App() {
           currentEdit={currentEdit}
           work={cvData.work}
         />
-        <Education education={cvData.education} />
+        <Education
+          handleAdd={handleEducationAdd}
+          education={cvData.education}
+        />
       </div>
     </main>
   );
