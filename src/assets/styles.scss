@@ -54,6 +54,9 @@ main {
       }
       ul.user-socials {
         margin-bottom: 0;
+        .field.has-addons a {
+          flex: 1;
+        }
       }
     }
     .user-photo {
@@ -69,7 +72,10 @@ main {
     margin-right: 10px;
 
     .experience {
-      padding-bottom: 20px;
+      &:not(:last-of-type) {
+        padding-bottom: 20px;
+      }
+
       .experience-elements {
         display: flex;
         flex-direction: column;
@@ -119,5 +125,17 @@ h1 {
   li {
     display: flex;
     gap: 5px;
+    .item-name {
+      flex: 1;
+    }
+  }
+}
+// hide all form elements on preview mode
+.preview-mode {
+  .is-hidden-preview {
+    display: none !important;
+  }
+  .action-wrap:hover .action {
+    display: none;
   }
 }

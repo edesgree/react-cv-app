@@ -21,7 +21,7 @@ function App() {
     JSON.parse(localStorage.getItem('cvData')) || data
   );
 
-  function handleEditButton(e) {
+  function handlePreviewButton(e) {
     e.preventDefault();
     setPreviewMode(!previewMode);
   }
@@ -48,7 +48,6 @@ function App() {
   // set current item being edited
   const handleEdit = (index) => {
     setCurrentEdit(index);
-    //console.log('currentEdit', currentEdit);
   };
 
   /**
@@ -211,13 +210,13 @@ function App() {
   };
   return (
     <div className=" container is-max-desktop">
-      <main className="app columns">
+      <main className={`${previewMode && 'preview-mode'} app columns`}>
         <aside className="column is-one-third ">
           <div className="content">
             <div className="block">
               <Button
                 name="preview"
-                action={handleEditButton}
+                action={handlePreviewButton}
                 iconSize="xs"
                 iconSymbol={previewMode ? 'fa-pen-to-square' : 'fa-eye'}
                 text={previewMode ? 'Edit' : 'Preview'}
@@ -255,15 +254,14 @@ function App() {
               social={cvData.social}
               currentEdit={currentEdit}
               setCurrent={handleEdit}
+              previewMode={previewMode}
             />
 
-            <ErrorBoundary>
-              <Interests
-                add={handleSkillAdd}
-                delete={handleSkillDelete}
-                interests={cvData.interests}
-              />
-            </ErrorBoundary>
+            <Interests
+              add={handleSkillAdd}
+              delete={handleSkillDelete}
+              interests={cvData.interests}
+            />
           </div>
         </aside>
         <div className="column experiences">

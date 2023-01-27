@@ -89,7 +89,8 @@ export default function Socials(props) {
               <a href={item.url} className="mr-2" target="_blank">
                 {item.name}
               </a>
-              <p className="control">
+
+              <p className="control is-hidden-preview">
                 <Button
                   name="edit"
                   id={item.id}
@@ -99,7 +100,7 @@ export default function Socials(props) {
                   text=""
                 />
               </p>
-              <p className="control">
+              <p className="control is-hidden-preview">
                 <Button
                   name="delete"
                   id={item.id}
@@ -119,7 +120,8 @@ export default function Socials(props) {
     <div className="block">
       <h4>Socials</h4>
       <ul className="user-socials">{socialsElements}</ul>
-      <div>
+
+      <div className=" is-hidden-preview">
         <Button
           name="addSchool"
           action={handleAdd}

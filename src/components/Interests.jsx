@@ -26,23 +26,24 @@ export default function Interests(props) {
   const interestsElements = props.interests.map((interest) => {
     return (
       <li key={interest.id}>
-        {interest.name}
-
-        <Button
-          name="delete"
-          id={interest.id}
-          action={handleDelete}
-          iconSize="xs"
-          iconSymbol="fa-trash"
-          text=""
-        />
+        <span className="item-name">{interest.name}</span>
+        <div className=" is-hidden-preview">
+          <Button
+            name="delete"
+            id={interest.id}
+            action={handleDelete}
+            iconSize="xs"
+            iconSymbol="fa-trash"
+            text=""
+          />
+        </div>
       </li>
     );
   });
   return (
     <div>
       <h4>Interests</h4>
-      <div className="field has-addons">
+      <div className="field has-addons is-hidden-preview">
         <div className="control">
           <input
             value={skillName}

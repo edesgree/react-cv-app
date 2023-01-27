@@ -179,7 +179,7 @@ export default function Work(props) {
               </div>
             </div>
 
-            <div className="field has-addons">
+            <div className="field has-addons is-hidden-preview">
               <p className="control">
                 <Button
                   name="edit"
@@ -214,7 +214,7 @@ export default function Work(props) {
       <div className="card-content">
         <ul className="experience-elements content">{workElements}</ul>
       </div>
-      <div className="card-footer is-justify-content-center is-flex">
+      <div className="card-footer is-justify-content-center is-flex is-hidden-preview">
         <div className="mt-5">
           <Button
             name="addWork"

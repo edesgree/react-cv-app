@@ -137,9 +137,9 @@ export default function Education(props) {
             <small> {item.dateGraduated}</small>
             <h3 className="title">{item.diplomaTitle}</h3>
             <h4 className="subtitle">{item.schoolName}</h4>
-
             <p>{item.notes}</p>
-            <div className="field has-addons">
+
+            <div className="field has-addons is-hidden-preview">
               <p className="control">
                 <Button
                   name="edit"
@@ -174,7 +174,7 @@ export default function Education(props) {
       <div className="card-content">
         <ul className="experience-elements content">{educationElements}</ul>
       </div>
-      <div className="card-footer is-justify-content-center is-flex">
+      <div className="card-footer is-justify-content-center is-flex is-hidden-preview">
         <div className="mt-5">
           <Button
             name="addSchool"
