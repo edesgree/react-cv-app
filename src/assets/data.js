@@ -1,61 +1,73 @@
 import { nanoid } from 'nanoid';
 const data = {
   mainTitle: 'React CV App!',
-  firstName: 'Edouard',
-  lastName: 'Desgrée',
-  userJobTitle: 'Front-end developer',
+  firstName: 'Jackie',
+  lastName: 'Chan',
+  userJobTitle: 'International Action Star & Stuntman',
   userDescription:
-    'My description ipsum dolor sit amet consectetur adipisicing elit. Facer consectetur dolores accusantium error blanditiis quaerat deserunt  asperiores, necessitatibus, itaque aut voluptates eveniet venia.',
-  email: 'edouard@desgree.com',
-  phone: '345-098-3333',
-  location: 'Montreal,Qc',
-  website: 'www.desgree.com',
+    'Jackie Chan is a Hong Kong actor, martial artist, film director, producer, stuntman, and singer. He is known for his acrobatic fighting style, comic timing, use of improvised weapons, and innovative stunts.',
+  email: 'jackie@chan.com',
+  phone: '+1-541-754-3010',
+  location: 'Hong Kong, China',
+  website: 'jackie-chan.com',
   social: [
-    { id: nanoid(), name: 'facebook', url: 'http://www.facebook.com' },
-    { id: nanoid(), name: 'github', url: 'http://www.github.com' },
-    { id: nanoid(), name: 'instagram', url: 'http://www.instagram.com' }
+    { id: nanoid(), name: 'Facebook', url: 'www.facebook.com/jackie' },
+    { id: nanoid(), name: 'Instagram', url: 'instagram.com/jackiechan/?hl=en' },
+    { id: nanoid(), name: 'Twitter', url: 'twitter.com/EyeOfJackieChan' }
   ],
   interests: [
-    { id: nanoid(), name: 'badminton' },
-    { id: nanoid(), name: 'rock climbing' },
-    { id: nanoid(), name: 'space science' }
+    { id: nanoid(), name: 'Martial arts' },
+    { id: nanoid(), name: 'Stunt coordination' },
+    { id: nanoid(), name: 'Acting' },
+    { id: nanoid(), name: 'Producing' },
+    { id: nanoid(), name: 'Directing' }
   ],
   work: [
     {
       id: nanoid(),
-      dateStart: '02-02-2020',
+      dateStart: '02-02-1976',
       dateEnd: '01-01-2022',
-      jobTitle: 'webdesigner',
-      company: 'designCo',
+      jobTitle: 'Actor',
+      company: 'Golden Harvest',
       description:
-        'Lorem ipsum dolor sit amet consectetur, adipisicing eli Excepturi provident tenetur voluptatibus dolorum facere quo consectetur.',
-      location: 'Paris, France'
+        'Acted in various Hong Kong action films. Performed all of own stunts in films. Collaborated with director on action choreography. Acted in over 150 films, including Rush Hour and Kung Fu Panda',
+      location: 'Hong Kong'
     },
     {
       id: nanoid(),
-      dateStart: '16-12-2018',
-      dateEnd: '24-09-2022',
-      jobTitle: 'adventurer',
-      company: 'popoy',
+      dateStart: '02-02-1989',
+      dateEnd: '01-09-2018',
+      jobTitle: 'Stunt Coordinator',
+      company: 'Various',
       description:
-        'Adventure ipsum dolor sit amet consectetur, adipisicing eli Excepturi provident tenetur voluptatibus dolorum facere quo consectetur.',
-      location: 'Auckland, Nz'
+        'Coordinated and performed stunts for films. Coordinated stunts for over 50 films. Performed dangerous stunts, including high falls and vehicle stunts. Trained actors and stunts performers',
+      location: 'Hong Kong'
+    },
+    {
+      id: nanoid(),
+      dateStart: '02-02-1985',
+      dateEnd: '01-09-2009',
+      jobTitle: 'Director',
+      company: 'JCE Movies Limited',
+      description:
+        'Directed action films. Directed over 10 films, including Armor of God and Police Story. Collaborated with actors and stunt performers on action choreography. Oversaw all aspects of film production',
+      location: 'Los Angeles'
     }
   ],
   education: [
     {
       id: nanoid(),
-      dateGraduated: '16-12-2008',
-      diplomaTitle: 'Maitrise audiovisuel & multimedia',
-      schoolName: 'University of Marne la vallée',
-      notes: 'some notes about the curriculum'
+      dateGraduated: '16-12-1972',
+      diplomaTitle: 'Bachelor of Fine Arts',
+      schoolName: 'New York University',
+      notes: 'Action and stunt award of the year'
     },
     {
       id: nanoid(),
-      dateGraduated: '12-12-2008',
-      diplomaTitle: 'school2',
-      schoolName: 'University school',
-      notes: 'some notes'
+      dateGraduated: '12-12-1968',
+      diplomaTitle: 'High School Diploma',
+      schoolName: 'University of Bejing',
+      notes: 'Option art and cinema'
     }
   ]
 };
