@@ -27,7 +27,7 @@ function App() {
   }
   React.useEffect(() => {
     // save CV data to storage
-    //localStorage.setItem('cvData', JSON.stringify(cvData));
+    localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log('cvData', cvData);
   }, [cvData]);
   React.useEffect(() => {

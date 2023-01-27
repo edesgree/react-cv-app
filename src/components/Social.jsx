@@ -59,8 +59,8 @@ export default function Socials(props) {
               </div>
             </div>
             <div className="field has-addons">
-              <p class="control">
-                <a class="button is-small is-static">http://</a>
+              <p className="control">
+                <a className="button is-small is-static">http://</a>
               </p>
               <div className="control is-expanded">
                 <InputField

@@ -72,10 +72,6 @@ main {
     margin-right: 10px;
 
     .experience {
-      &:not(:last-of-type) {
-        padding-bottom: 20px;
-      }
-
       .experience-elements {
         display: flex;
         flex-direction: column;
@@ -94,6 +90,9 @@ main {
       .card-header-title {
         background-color: $primary;
         color: white;
+      }
+      .card-footer {
+        padding-bottom: 20px;
       }
     }
   }
