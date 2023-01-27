@@ -7,7 +7,7 @@ export default function Intro(props) {
     <div>
       <header className="hero ">
         <div className="hero-body">
-          <p className="title is-1">
+          <div className="title is-1">
             <EditableText
               currentEdit={props.currentEdit}
               editableName="firstName"
@@ -26,8 +26,8 @@ export default function Intro(props) {
               editableHandleEdit={props.handleEdit}
               inputType="text"
             />
-          </p>
-          <p className="subtitle">
+          </div>
+          <div className="subtitle">
             <EditableText
               currentEdit={props.currentEdit}
               editableName="userJobTitle"
@@ -37,7 +37,7 @@ export default function Intro(props) {
               editableHandleEdit={props.handleEdit}
               inputType="text"
             />
-          </p>
+          </div>
         </div>
       </header>
       <div className="description">
