@@ -10,28 +10,7 @@ import InputField from './components/helpers/InputField';
 import UserContact from './components/UserContact';
 import Photo from './components/Photo';
 import { nanoid } from 'nanoid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faPlus,
-  faEnvelope,
-  faLink,
-  faPhone,
-  faLocationDot,
-  faPenToSquare,
-  faTrash,
-  faSave
-} from '@fortawesome/free-solid-svg-icons';
-library.add(
-  faPlus,
-  faEnvelope,
-  faSave,
-  faLink,
-  faPhone,
-  faLocationDot,
-  faPenToSquare,
-  faTrash
-);
+import './fontawesome';
 
 function App() {
   const [count, setCount] = React.useState(0);
