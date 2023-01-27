@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default function InputField(props) {
-  console.log('props.inputType', props.inputType);
-  console.log('props.inputname', props.name);
   return props.inputType === 'textarea' ? (
     <textarea
       value={props.value}

@@ -30,9 +30,6 @@ function App() {
     localStorage.setItem('cvData', JSON.stringify(cvData));
     console.log('cvData', cvData);
   }, [cvData]);
-  React.useEffect(() => {
-    console.log('current edit:', currentEdit);
-  }, [currentEdit]);
   /**
    * Simple text items
    */

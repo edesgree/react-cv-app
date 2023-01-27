@@ -13,7 +13,7 @@ export default function Photo(props) {
       setPhotoUrl(base64);
       console.debug('file stored', base64);
     });
-    console.log('imageUpload');
+    console.log('image was uploaded');
   };
   const getBase64 = (file) => {
     return new Promise((resolve, reject) => {
