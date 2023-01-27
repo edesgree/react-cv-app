@@ -1,4 +1,4 @@
-# react Quiz app
+# React Resume app
 
 The project is to create an app that can generate a resume in ReactJS.
 The page consist of several form elements that gets updated with user input.
@@ -25,7 +25,7 @@ It is bootstraped with Vite.js.
 
 ## Features
 
-- Editable section of the resume
+- Editable sections of the resume
 
 ## What I learned
 
