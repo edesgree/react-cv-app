@@ -1,7 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import EditableText from './helpers/EditableText';
-import { nanoid } from 'nanoid';
+
 import Button from './helpers/Button';
 import InputField from './helpers/InputField';
 export default function Education(props) {
@@ -9,27 +7,28 @@ export default function Education(props) {
   const [formEducationData, setFormEducationData] = React.useState({});
 
   const handleAdd = (event) => {
+    // call add function for this target
     event.preventDefault();
     props.handleAdd();
   };
   const handleEdit = (event) => {
+    // set target item to editable input
     setEdit(true);
     props.setCurrent(event.currentTarget.id);
-    //setCurrentEditId(event.currentTarget.id);
-    //console.log('currentEdit', props.currentEdit);
-    console.log('event.currentTarget.id', event.currentTarget.id);
-
     setFormEducationData(
       props.education.filter((item) => item.id === event.currentTarget.id)[0]
     );
   };
 
   const handleDelete = (event) => {
+    // call delete function for this target
+    event.preventDefault();
     props.handleDelete(event.currentTarget.id);
   };
   const handleSave = () => {
     //send new object to be added to global data
     props.handleEdit(formEducationData);
+    // reset current item edited, close edit mode
     props.setCurrent('');
     setEdit(false);
   };
@@ -68,7 +67,7 @@ export default function Education(props) {
                 value={formEducationData.dateGraduated}
                 handleChange={handleChange}
                 name="dateGraduated"
-                inputType="text"
+                inputType="date"
                 placeholder="Date Graduated"
               />
               <InputField
@@ -130,7 +129,7 @@ export default function Education(props) {
       <h2 className="title">Education</h2>
       <ul className="education-elements">{educationElements}</ul>
       <Button
-        name="add"
+        name="addSchool"
         action={handleAdd}
         iconSize="xs"
         iconSymbol="fa-plus"

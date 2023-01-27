@@ -11,7 +11,7 @@ export default function Button(props) {
     >
       {props.text && <span>{props.text}</span>}
 
-      <span class="icon is-small">
+      <span className="icon is-small">
         <FontAwesomeIcon
           id={props.id}
           icon={`fas ${props.iconSymbol}`}

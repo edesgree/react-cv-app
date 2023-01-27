@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Input(props) {
-  if (props.inputType === 'text') {
+  if (props.inputType === 'text' || 'date') {
     return (
       <div className="control">
         <input
