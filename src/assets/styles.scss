@@ -74,6 +74,13 @@ main {
         li:not(:last-child) {
           border-bottom: solid 1px $lighter-blue;
         }
+
+        .title {
+          margin-top: 0;
+        }
+        .subtitle {
+          margin-bottom: 0;
+        }
       }
       .card-header-title {
         background-color: $primary;

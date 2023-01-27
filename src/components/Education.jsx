@@ -66,7 +66,7 @@ export default function Education(props) {
             </div>
             <div className="field is-horizontal">
               <div className="field-label is-small">
-                <label className="label">School Name</label>
+                <label className="label">School name</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -82,7 +82,7 @@ export default function Education(props) {
             </div>
             <div className="field is-horizontal">
               <div className="field-label is-small">
-                <label className="label">Date Graduated</label>
+                <label className="label">Graduation date</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -134,9 +134,10 @@ export default function Education(props) {
           </div>
         ) : (
           <div>
-            <h3>{item.diplomaTitle}</h3>
-            <h4>{item.schoolName}</h4>
             <small> {item.dateGraduated}</small>
+            <h3 className="title">{item.diplomaTitle}</h3>
+            <h4 className="subtitle">{item.schoolName}</h4>
+
             <p>{item.notes}</p>
             <div className="field has-addons">
               <p className="control">

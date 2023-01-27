@@ -12,7 +12,7 @@ export default function Socials(props) {
     );
   });
   return (
-    <div>
+    <div className="block">
       <h4>Socials</h4>
       <ul className="user-socials">{socialsElements}</ul>
     </div>

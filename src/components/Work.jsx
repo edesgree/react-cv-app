@@ -171,7 +171,7 @@ export default function Work(props) {
                   {item.dateStart} - {item.dateEnd}
                 </small>
                 <h3 className="title">{item.jobTitle}</h3>
-                <h4>{item.company}</h4>
+                <h4 className="subtitle">{item.company}</h4>
                 <span>{item.location}</span>
               </div>
               <div className="column">
