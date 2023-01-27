@@ -52,6 +52,9 @@ main {
           grid-template-columns: 25px 1fr;
         }
       }
+      ul.user-socials {
+        margin-bottom: 0;
+      }
     }
     .user-photo {
       img:hover {

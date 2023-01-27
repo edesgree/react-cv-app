@@ -3,7 +3,7 @@ import data from './assets/data';
 import ErrorBoundary from './components/ErrorBoundary';
 import Interests from './components/Interests';
 import Intro from './components/Intro';
-import Socials from './components/Socials';
+import Social from './components/Social';
 import Work from './components/Work';
 import Education from './components/Education';
 import InputField from './components/helpers/InputField';
@@ -165,6 +165,50 @@ function App() {
       work: prevData.work.filter((item) => item.id !== id)
     }));
   };
+  /**
+   * SOCIAL LINKS
+   */
+  const handleSocialEdit = (newSocial) => {
+    /**
+     * if sociallink in edit mode, we update the main cvData object
+     * by injecting the edited sociallink object in it
+     */
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        social: prevData.social.map((item) => {
+          if (item.id === newSocial.id) {
+            return newSocial;
+          } else {
+            return item;
+          }
+        })
+      };
+    });
+  };
+  const handleSocialAdd = () => {
+    // add a new item by injecting a object with dummy data into the main cvData object
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        social: [
+          ...prevData.social,
+          {
+            id: nanoid(),
+            name: 'website name',
+            url: 'url'
+          }
+        ]
+      };
+    });
+  };
+  const handleSocialDelete = (id) => {
+    // delete item by filtering it out of the list
+    setCvData((prevData) => ({
+      ...prevData,
+      social: prevData.social.filter((item) => item.id !== id)
+    }));
+  };
   return (
     <div className=" container is-max-desktop">
       <main className="app columns">
@@ -204,7 +248,14 @@ function App() {
               website={cvData.website}
             />
 
-            <Socials socials={cvData.socials} />
+            <Social
+              handleAdd={handleSocialAdd}
+              handleDelete={handleSocialDelete}
+              handleEdit={handleSocialEdit}
+              social={cvData.social}
+              currentEdit={currentEdit}
+              setCurrent={handleEdit}
+            />
 
             <ErrorBoundary>
               <Interests

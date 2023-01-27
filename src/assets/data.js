@@ -10,7 +10,7 @@ const data = {
   phone: '345-098-3333',
   location: 'Montreal,Qc',
   website: 'www.desgree.com',
-  socials: [
+  social: [
     { id: nanoid(), name: 'facebook', url: 'http://www.facebook.com' },
     { id: nanoid(), name: 'github', url: 'http://www.github.com' },
     { id: nanoid(), name: 'instagram', url: 'http://www.instagram.com' }

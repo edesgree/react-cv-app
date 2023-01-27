@@ -36,7 +36,7 @@ export default function EditableText(props) {
               className=""
               icon="fa-solid fa-pen-to-square"
               size="xs"
-              color="rgb(147 30 140)"
+              color="#3e8ed0"
               onClick={() => props.editableHandleEdit(props.editableName)}
             />
           </span>
