@@ -117,6 +117,54 @@ function App() {
       education: prevData.education.filter((item) => item.id !== id)
     }));
   };
+  /**
+   * WORK EXPERIENCES
+   */
+  const handleWorkEdit = (newWork) => {
+    /**
+     * if workXP in edit mode, we update the main cvData object
+     * by injecting the edited workXP object in it
+     */
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        work: prevData.work.map((item) => {
+          if (item.id === newWork.id) {
+            return newWork;
+          } else {
+            return item;
+          }
+        })
+      };
+    });
+  };
+  const handleWorkAdd = () => {
+    // add a new item by injecting a object with dummy data into the main cvData object
+    setCvData((prevData) => {
+      return {
+        ...prevData,
+        work: [
+          ...prevData.work,
+          {
+            id: nanoid(),
+            dateStart: 'start date',
+            dateEnd: 'end date',
+            jobTitle: 'New job',
+            company: 'Company name',
+            description: 'I did all these things...',
+            location: 'City name'
+          }
+        ]
+      };
+    });
+  };
+  const handleWorkDelete = (id) => {
+    // delete item by filtering it out of the list
+    setCvData((prevData) => ({
+      ...prevData,
+      work: prevData.work.filter((item) => item.id !== id)
+    }));
+  };
   return (
     <main className="App columns">
       <aside className="column is-one-third ">
@@ -183,10 +231,12 @@ function App() {
         </header>
 
         <Work
-          handleChange={handleChange}
-          handleEdit={handleEdit}
-          currentEdit={currentEdit}
+          handleAdd={handleWorkAdd}
+          handleDelete={handleWorkDelete}
+          handleEdit={handleWorkEdit}
           work={cvData.work}
+          currentEdit={currentEdit}
+          setCurrent={handleEdit}
         />
         <Education
           handleAdd={handleEducationAdd}
