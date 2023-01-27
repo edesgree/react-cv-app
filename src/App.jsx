@@ -166,88 +166,90 @@ function App() {
     }));
   };
   return (
-    <main className="App columns">
-      <aside className="column is-one-third ">
-        <div className="content">
-          <div className="block">
-            <Button
-              name="preview"
-              action={handleEditButton}
-              iconSize="xs"
-              iconSymbol={previewMode ? 'fa-pen-to-square' : 'fa-eye'}
-              text={previewMode ? 'Edit' : 'Preview'}
-              style="is-info"
-            />
-            <span className="ml-2 tag is-light">
-              {previewMode ? 'Preview mode' : 'Edit mode'}
-            </span>
-          </div>
-
-          <Photo />
-          <Intro
-            handleChange={handleChange}
-            handleEdit={handleEdit}
-            currentEdit={currentEdit}
-            firstName={cvData.firstName}
-            lastName={cvData.lastName}
-            userJobTitle={cvData.userJobTitle}
-            userDescription={cvData.userDescription}
-          />
-          <UserContact
-            handleChange={handleChange}
-            handleEdit={handleEdit}
-            currentEdit={currentEdit}
-            email={cvData.email}
-            phone={cvData.phone}
-            location={cvData.location}
-            website={cvData.website}
-          />
-
-          <Socials socials={cvData.socials} />
-
-          <ErrorBoundary>
-            <Interests
-              add={handleSkillAdd}
-              delete={handleSkillDelete}
-              interests={cvData.interests}
-            />
-          </ErrorBoundary>
-        </div>
-      </aside>
-      <div className="column experiences">
-        <header>
-          {previewMode ? (
-            <h1 className="title is-1">{cvData.mainTitle}</h1>
-          ) : (
-            <div className="form-control">
-              <InputField
-                value={cvData.mainTitle}
-                handleChange={handleChange}
-                name="mainTitle"
-                type="text"
+    <div className=" container is-max-desktop">
+      <main className="app columns">
+        <aside className="column is-one-third ">
+          <div className="content">
+            <div className="block">
+              <Button
+                name="preview"
+                action={handleEditButton}
+                iconSize="xs"
+                iconSymbol={previewMode ? 'fa-pen-to-square' : 'fa-eye'}
+                text={previewMode ? 'Edit' : 'Preview'}
+                style="is-info"
               />
+              <span className="ml-2 tag is-light">
+                {previewMode ? 'Preview mode' : 'Edit mode'}
+              </span>
             </div>
-          )}
-        </header>
 
-        <Work
-          handleAdd={handleWorkAdd}
-          handleDelete={handleWorkDelete}
-          handleEdit={handleWorkEdit}
-          work={cvData.work}
-          currentEdit={currentEdit}
-          setCurrent={handleEdit}
-        />
-        <Education
-          handleAdd={handleEducationAdd}
-          handleDelete={handleEducationDelete}
-          handleEdit={handleEducationEdit}
-          education={cvData.education}
-          currentEdit={currentEdit}
-          setCurrent={handleEdit}
-        />
-      </div>
-    </main>
+            <Photo />
+            <Intro
+              handleChange={handleChange}
+              handleEdit={handleEdit}
+              currentEdit={currentEdit}
+              firstName={cvData.firstName}
+              lastName={cvData.lastName}
+              userJobTitle={cvData.userJobTitle}
+              userDescription={cvData.userDescription}
+            />
+            <UserContact
+              handleChange={handleChange}
+              handleEdit={handleEdit}
+              currentEdit={currentEdit}
+              email={cvData.email}
+              phone={cvData.phone}
+              location={cvData.location}
+              website={cvData.website}
+            />
+
+            <Socials socials={cvData.socials} />
+
+            <ErrorBoundary>
+              <Interests
+                add={handleSkillAdd}
+                delete={handleSkillDelete}
+                interests={cvData.interests}
+              />
+            </ErrorBoundary>
+          </div>
+        </aside>
+        <div className="column experiences">
+          <header>
+            {previewMode ? (
+              <h1 className="title is-1">{cvData.mainTitle}</h1>
+            ) : (
+              <div className="form-control">
+                <InputField
+                  value={cvData.mainTitle}
+                  handleChange={handleChange}
+                  name="mainTitle"
+                  type="text"
+                />
+              </div>
+            )}
+          </header>
+
+          <Work
+            handleAdd={handleWorkAdd}
+            handleDelete={handleWorkDelete}
+            handleEdit={handleWorkEdit}
+            work={cvData.work}
+            currentEdit={currentEdit}
+            setCurrent={handleEdit}
+          />
+          <Education
+            handleAdd={handleEducationAdd}
+            handleDelete={handleEducationDelete}
+            handleEdit={handleEducationEdit}
+            education={cvData.education}
+            currentEdit={currentEdit}
+            setCurrent={handleEdit}
+          />
+        </div>
+      </main>
+    </div>
   );
 }
 

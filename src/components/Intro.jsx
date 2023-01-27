@@ -1,6 +1,7 @@
 import React from 'react';
 
 import EditableText from './helpers/EditableText';
+import InputEditable from './helpers/InputEditable';
 export default function Intro(props) {
   return (
     <div>
@@ -38,7 +39,6 @@ export default function Intro(props) {
           />
         </h2>
       </header>
-
       <EditableText
         currentEdit={props.currentEdit}
         editableName="userDescription"

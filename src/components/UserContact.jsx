@@ -14,7 +14,7 @@ export default function UserContact(props) {
           editableTextContent={props.email}
           editableHandleSave={() => props.handleEdit(null)}
           editableHandleEdit={props.handleEdit}
-          inputType="text"
+          inputType="email"
         />
       </li>
       <li>
@@ -26,7 +26,7 @@ export default function UserContact(props) {
           editableTextContent={props.website}
           editableHandleSave={() => props.handleEdit(null)}
           editableHandleEdit={props.handleEdit}
-          inputType="text"
+          inputType="url"
         />
       </li>
       <li>
@@ -38,7 +38,7 @@ export default function UserContact(props) {
           editableTextContent={props.phone}
           editableHandleSave={() => props.handleEdit(null)}
           editableHandleEdit={props.handleEdit}
-          inputType="text"
+          inputType="tel"
         />
       </li>
       <li>

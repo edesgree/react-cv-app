@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InputField from './InputField';
 import Button from './Button';
 
-export default function Input(props) {
+export default function InputEditable(props) {
   return (
     <div className="field has-addons">
       <div className="control">

@@ -6,7 +6,8 @@ $green: #94d7a2;
 $pink: #f8bcbc;
 $blue: #3e8ed0;
 $primary: $blue;
-$dark-blue: #293264;
+
+$dark-blue: #334155;
 $dark-white: #f5f7fb;
 $light-blue: #d6dbf5;
 $lighter-blue: #e2e6ee;
@@ -16,7 +17,13 @@ $purple: rgb(147 30 140);
 $cyan: #00ffb8;
 body {
   align-items: center;
-  background: $dark-white;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
 
   display: flex;
   font-family: 'Karla', sans-serif;
@@ -24,7 +31,10 @@ body {
   margin: 0;
   min-height: 100vh;
 }
-
+.app.columns {
+  //border-radius: 20px;
+  margin-top: 20px;
+}
 main {
   background-color: whitesmoke;
 
