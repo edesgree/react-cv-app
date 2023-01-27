@@ -2,6 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import InputEditable from './InputEditable';
 export default function EditableText(props) {
+  let linkPrefix;
+  props.inputType === 'url'
+    ? (linkPrefix = 'http://')
+    : props.inputType === 'email'
+    ? (linkPrefix = 'mailto://')
+    : '';
   return (
     <div className="action-wrap">
       {props.currentEdit === props.editableName ? (
@@ -14,7 +20,17 @@ export default function EditableText(props) {
         />
       ) : (
         <span className="is-flex is-align-items-center is-gap-5">
-          {props.editableTextContent}
+          {props.inputType === 'url' || props.inputType === 'email' ? (
+            <a
+              target="_blank"
+              href={`${linkPrefix}${props.editableTextContent}`}
+            >
+              {props.editableTextContent}
+            </a>
+          ) : (
+            props.editableTextContent
+          )}
+
           <span className="action action-save icon-holder">
             <FontAwesomeIcon
               className=""

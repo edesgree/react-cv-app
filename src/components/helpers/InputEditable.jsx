@@ -6,6 +6,11 @@ import Button from './Button';
 export default function InputEditable(props) {
   return (
     <div className="field has-addons">
+      {props.inputType === 'url' && (
+        <p class="control">
+          <a class="button is-small is-static">http://</a>
+        </p>
+      )}
       <div className="control">
         <InputField
           value={props.inputValue}

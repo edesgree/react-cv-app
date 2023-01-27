@@ -19,6 +19,7 @@ export default function UserContact(props) {
       </li>
       <li>
         <FontAwesomeIcon icon="link" />
+
         <EditableText
           currentEdit={props.currentEdit}
           editableName="website"

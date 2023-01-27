@@ -15,7 +15,11 @@ export default function InputField(props) {
         className="textarea is-small"
       />
     </div>
-  ) : props.inputType === 'text' || 'date' || 'email' || 'tel' || 'url' ? (
+  ) : props.inputType === 'text' ||
+    props.inputType === 'date' ||
+    props.inputType === 'email' ||
+    props.inputType === 'tel' ||
+    props.inputType === 'url' ? (
     <div className="control">
       <input
         value={props.value}
