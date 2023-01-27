@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function Button(props) {
   return (
     <button
-      className="button is-small"
+      className={`button is-small ${props.style}`}
       name={props.name}
       id={props.id}
       onClick={props.action}
@@ -16,7 +16,7 @@ export default function Button(props) {
           id={props.id}
           icon={`fas ${props.iconSymbol}`}
           size={props.iconSize}
-          color="rgb(147 30 140)"
+          color={props.style === 'is-info' ? 'white' : 'rgb(147 30 140)'}
         />
       </span>
     </button>

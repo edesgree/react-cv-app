@@ -8,15 +8,17 @@ import {
   faLocationDot,
   faPenToSquare,
   faTrash,
+  faEye,
   faSave
 } from '@fortawesome/free-solid-svg-icons';
 library.add(
   faPlus,
   faEnvelope,
-  faSave,
   faLink,
   faPhone,
   faLocationDot,
   faPenToSquare,
-  faTrash
+  faTrash,
+  faEye,
+  faSave
 );

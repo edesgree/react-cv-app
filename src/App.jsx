@@ -9,11 +9,12 @@ import Education from './components/Education';
 import InputField from './components/helpers/InputField';
 import UserContact from './components/UserContact';
 import Photo from './components/Photo';
+import Button from './components/helpers/Button';
 import { nanoid } from 'nanoid';
 import './fontawesome';
 
 function App() {
-  const [editMode, setEditMode] = React.useState(false);
+  const [previewMode, setPreviewMode] = React.useState(false);
   const [currentEdit, setCurrentEdit] = React.useState(null);
 
   const [cvData, setCvData] = React.useState(
@@ -22,7 +23,7 @@ function App() {
 
   function handleEditButton(e) {
     e.preventDefault();
-    setEditMode(!editMode);
+    setPreviewMode(!previewMode);
   }
   React.useEffect(() => {
     // save CV data to storage
@@ -120,9 +121,17 @@ function App() {
     <main className="App columns">
       <aside className="column is-one-third ">
         <div className="content">
-          <button className="button" onClick={handleEditButton}>
-            {editMode ? 'preview' : 'edit'}
-          </button>
+          <div className="block">
+            <Button
+              name="preview"
+              action={handleEditButton}
+              iconSize="xs"
+              iconSymbol={previewMode ? 'fa-pen-to-square' : 'fa-eye'}
+              text={previewMode ? 'edit' : 'preview'}
+              style="is-info"
+            />
+          </div>
+
           <Photo />
           <Intro
             handleChange={handleChange}
@@ -156,7 +165,7 @@ function App() {
       </aside>
       <div className="column experiences">
         <header>
-          {!editMode ? (
+          {previewMode ? (
             <h1 className="title is-1">{cvData.mainTitle}</h1>
           ) : (
             <div className="form-control">
@@ -169,7 +178,7 @@ function App() {
             </div>
           )}
 
-          {editMode ? 'edit mode' : 'preview mode'}
+          {previewMode ? 'preview mode' : 'edit mode'}
         </header>
 
         <Work
