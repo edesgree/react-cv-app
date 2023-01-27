@@ -45,7 +45,6 @@ function App() {
   function handleEditButton(e) {
     e.preventDefault();
     setEditMode(!editMode);
-    console.log('editMode', editMode);
   }
   React.useEffect(() => {
     // save CV data to storage
@@ -59,7 +58,7 @@ function App() {
    * Simple text items
    */
   const handleChange = (event) => {
-    console.log('event.target.name', event.target.name);
+    //update data with current input
     setCvData((prevData) => {
       return {
         ...prevData,
@@ -67,6 +66,7 @@ function App() {
       };
     });
   };
+  // set current item being edited
   const handleEdit = (index) => {
     setCurrentEdit(index);
     //console.log('currentEdit', currentEdit);
@@ -76,16 +76,17 @@ function App() {
    * SKILLS / INTERESTS
    */
   const handleSkillAdd = (skillAdd, idAdd) => {
+    // add a new item by concatening it to the items array
     setCvData((prevData) => {
       return {
         ...prevData,
         interests: cvData.interests.concat({ id: idAdd, name: skillAdd })
       };
     });
-    console.log('add skill');
   };
 
   const handleSkillDelete = (id) => {
+    // delete item by filtering it out of the list
     setCvData((prevData) => ({
       ...prevData,
       interests: prevData.interests.filter((item) => item.id !== id)
@@ -95,9 +96,10 @@ function App() {
    * EDUCATION
    */
   const handleEducationEdit = (newSchool) => {
-    console.log('newSchool', newSchool.id);
-    console.log('handleEducationEdit', cvData);
-    // if school in edit mode, we get update the new school object in the main CVdata object
+    /**
+     * if school in edit mode, we update the main cvData object
+     * by injecting the edited school object in it
+     */
     setCvData((prevData) => {
       return {
         ...prevData,
@@ -112,6 +114,7 @@ function App() {
     });
   };
   const handleEducationAdd = () => {
+    // add a new item by injecting a object with dummy data into the main cvData object
     setCvData((prevData) => {
       return {
         ...prevData,
@@ -129,6 +132,7 @@ function App() {
     });
   };
   const handleEducationDelete = (id) => {
+    // delete item by filtering it out of the list
     setCvData((prevData) => ({
       ...prevData,
       education: prevData.education.filter((item) => item.id !== id)

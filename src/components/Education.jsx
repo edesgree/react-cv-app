@@ -48,35 +48,90 @@ export default function Education(props) {
       <li key={item.id} name={item.id}>
         <div className="education-item">
           {edit && item.id === props.currentEdit ? (
-            <div className="field">
-              <InputField
-                value={formEducationData.diplomaTitle}
-                handleChange={handleChange}
-                name="diplomaTitle"
-                inputType="text"
-                placeholder="Diploma title"
-              />
-              <InputField
-                value={formEducationData.schoolName}
-                handleChange={handleChange}
-                name="schoolName"
-                inputType="text"
-                placeholder="School Name"
-              />
-              <InputField
-                value={formEducationData.dateGraduated}
-                handleChange={handleChange}
-                name="dateGraduated"
-                inputType="date"
-                placeholder="Date Graduated"
-              />
-              <InputField
-                value={formEducationData.notes}
-                handleChange={handleChange}
-                name="notes"
-                inputType="textarea"
-                placeholder="Notes"
-              />
+            <div>
+              <div className="field is-horizontal">
+                <div className="field-label is-small">
+                  <label className="label">Diploma title</label>
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <InputField
+                      value={formEducationData.diplomaTitle}
+                      handleChange={handleChange}
+                      name="diplomaTitle"
+                      inputType="text"
+                      placeholder="Diploma title"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-label is-small">
+                  <label className="label">School Name</label>
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <InputField
+                      value={formEducationData.schoolName}
+                      handleChange={handleChange}
+                      name="schoolName"
+                      inputType="text"
+                      placeholder="School Name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-label is-small">
+                  <label className="label">Date Graduated</label>
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <InputField
+                      value={formEducationData.dateGraduated}
+                      handleChange={handleChange}
+                      name="dateGraduated"
+                      inputType="date"
+                      placeholder="Date Graduated"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-label is-small">
+                  <label className="label">Notes</label>
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <InputField
+                      value={formEducationData.notes}
+                      handleChange={handleChange}
+                      name="notes"
+                      inputType="textarea"
+                      placeholder="Notes"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-label">
+                  {/*<!-- Left empty for spacing -->*/}
+                </div>
+                <div className="field-body">
+                  <div className="field">
+                    <div className="control">
+                      <Button
+                        name="save"
+                        id={item.id}
+                        action={handleSave}
+                        iconSize="xs"
+                        iconSymbol="fa-save"
+                        text=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
             <div>
@@ -84,43 +139,31 @@ export default function Education(props) {
               <h4>{item.schoolName}</h4>
               <small> {item.dateGraduated}</small>
               <p>{item.notes}</p>
+              <div className="field has-addons">
+                <p className="control">
+                  <Button
+                    name="edit"
+                    id={item.id}
+                    action={handleEdit}
+                    iconSize="xs"
+                    iconSymbol="fa-pen-to-square"
+                    text=""
+                  />
+                </p>
+                <p className="control">
+                  <Button
+                    name="delete"
+                    id={item.id}
+                    action={handleDelete}
+                    iconSize="xs"
+                    iconSymbol="fa-trash"
+                    text=""
+                  />
+                </p>
+              </div>
             </div>
           )}
         </div>
-
-        {edit && item.id === props.currentEdit ? (
-          <Button
-            name="save"
-            id={item.id}
-            action={handleSave}
-            iconSize="xs"
-            iconSymbol="fa-save"
-            text=""
-          />
-        ) : (
-          <div className="field has-addons">
-            <p className="control">
-              <Button
-                name="edit"
-                id={item.id}
-                action={handleEdit}
-                iconSize="xs"
-                iconSymbol="fa-pen-to-square"
-                text=""
-              />
-            </p>
-            <p className="control">
-              <Button
-                name="delete"
-                id={item.id}
-                action={handleDelete}
-                iconSize="xs"
-                iconSymbol="fa-trash"
-                text=""
-              />
-            </p>
-          </div>
-        )}
       </li>
     );
   });
