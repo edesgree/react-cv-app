@@ -32,13 +32,15 @@ export default function EditableText(props) {
           )}
 
           <span className="action action-save icon-holder">
-            <FontAwesomeIcon
-              className=""
-              icon="fa-solid fa-pen-to-square"
-              size="xs"
-              color="#3e8ed0"
-              onClick={() => props.editableHandleEdit(props.editableName)}
-            />
+            <button className="button is-small">
+              <FontAwesomeIcon
+                className=""
+                icon="fa-solid fa-pen-to-square"
+                size="xs"
+                color="#5961f9"
+                onClick={() => props.editableHandleEdit(props.editableName)}
+              />
+            </button>
           </span>
         </span>
       )}

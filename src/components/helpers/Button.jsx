@@ -16,7 +16,7 @@ export default function Button(props) {
           id={props.id}
           icon={`fas ${props.iconSymbol}`}
           size={props.iconSize}
-          color={props.style === 'is-info' ? 'white' : '#3e8ed0'}
+          color={props.style === 'is-info' ? 'white' : '#5961f9'}
         />
       </span>
     </button>

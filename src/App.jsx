@@ -225,15 +225,7 @@ function App() {
             </div>
 
             <Photo />
-            <Intro
-              handleChange={handleChange}
-              handleEdit={handleEdit}
-              currentEdit={currentEdit}
-              firstName={cvData.firstName}
-              lastName={cvData.lastName}
-              userJobTitle={cvData.userJobTitle}
-              userDescription={cvData.userDescription}
-            />
+
             <UserContact
               handleChange={handleChange}
               handleEdit={handleEdit}
@@ -262,21 +254,15 @@ function App() {
           </div>
         </aside>
         <div className="column experiences">
-          <header>
-            {previewMode ? (
-              <h1 className="title is-1">{cvData.mainTitle}</h1>
-            ) : (
-              <div className="form-control">
-                <InputField
-                  value={cvData.mainTitle}
-                  handleChange={handleChange}
-                  name="mainTitle"
-                  inputType="text"
-                />
-              </div>
-            )}
-          </header>
-
+          <Intro
+            handleChange={handleChange}
+            handleEdit={handleEdit}
+            currentEdit={currentEdit}
+            firstName={cvData.firstName}
+            lastName={cvData.lastName}
+            userJobTitle={cvData.userJobTitle}
+            userDescription={cvData.userDescription}
+          />
           <Work
             handleAdd={handleWorkAdd}
             handleDelete={handleWorkDelete}
