@@ -13,7 +13,6 @@ import { nanoid } from 'nanoid';
 import './fontawesome';
 
 function App() {
-  const [count, setCount] = React.useState(0);
   const [editMode, setEditMode] = React.useState(false);
   const [currentEdit, setCurrentEdit] = React.useState(null);
 
@@ -104,7 +103,7 @@ function App() {
             dateGraduated: '16-12-2008',
             diplomaTitle: 'My diploma title',
             schoolName: 'School name',
-            notes: 'some notes'
+            notes: 'Some notes'
           }
         ]
       };
