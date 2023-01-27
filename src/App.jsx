@@ -225,7 +225,7 @@ function App() {
                   value={cvData.mainTitle}
                   handleChange={handleChange}
                   name="mainTitle"
-                  type="text"
+                  inputType="text"
                 />
               </div>
             )}
