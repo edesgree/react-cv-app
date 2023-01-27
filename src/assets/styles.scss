@@ -4,7 +4,8 @@
 
 $green: #94d7a2;
 $pink: #f8bcbc;
-$blue: #4d5b9e;
+$blue: #3e8ed0;
+$primary: $blue;
 $dark-blue: #293264;
 $dark-white: #f5f7fb;
 $light-blue: #d6dbf5;
@@ -42,6 +43,33 @@ main {
         }
       }
     }
+    .user-photo {
+      img:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 10px;
+
+    .experience {
+      padding-bottom: 20px;
+      .education-elements {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        li:not(:last-child) {
+          border-bottom: solid 1px $lighter-blue;
+        }
+      }
+      .card-header-title {
+        background-color: $primary;
+        color: white;
+      }
+    }
   }
 }
 
@@ -66,26 +94,10 @@ h1 {
     display: inline-flex;
   }
 }
-.user-photo {
-  img:hover {
-    cursor: pointer;
-  }
-}
 
 .list-item {
   li {
     display: flex;
     gap: 5px;
-  }
-}
-
-.education-elements {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  li {
-    border-bottom: solid 1px $lighter-blue;
-    padding-bottom: 20px;
   }
 }

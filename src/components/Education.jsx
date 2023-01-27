@@ -48,7 +48,7 @@ export default function Education(props) {
       <li key={item.id} name={item.id}>
         <div className="education-item">
           {edit && item.id === props.currentEdit ? (
-            <div>
+            <div className="mb-5">
               <div className="field is-horizontal">
                 <div className="field-label is-small">
                   <label className="label">Diploma title</label>
@@ -168,16 +168,25 @@ export default function Education(props) {
     );
   });
   return (
-    <section>
-      <h2 className="title">Education</h2>
-      <ul className="education-elements">{educationElements}</ul>
-      <Button
-        name="addSchool"
-        action={handleAdd}
-        iconSize="xs"
-        iconSymbol="fa-plus"
-        text="Add school"
-      />
+    <section className="experience card">
+      <div className="card-header">
+        <h2 className="card-header-title title">Education</h2>
+      </div>
+      <div className="card-content">
+        <ul className="education-elements content">{educationElements}</ul>
+      </div>
+      <div className="card-footer is-justify-content-center is-flex">
+        <div className="mt-5">
+          <Button
+            name="addSchool"
+            action={handleAdd}
+            iconSize="xs"
+            iconSymbol="fa-plus"
+            text="Add school"
+            style="is-info"
+          />
+        </div>
+      </div>
     </section>
   );
 }

@@ -127,9 +127,12 @@ function App() {
               action={handleEditButton}
               iconSize="xs"
               iconSymbol={previewMode ? 'fa-pen-to-square' : 'fa-eye'}
-              text={previewMode ? 'edit' : 'preview'}
+              text={previewMode ? 'Edit' : 'Preview'}
               style="is-info"
             />
+            <span className="ml-2 tag is-light">
+              {previewMode ? 'Preview mode' : 'Edit mode'}
+            </span>
           </div>
 
           <Photo />
@@ -177,8 +180,6 @@ function App() {
               />
             </div>
           )}
-
-          {previewMode ? 'preview mode' : 'edit mode'}
         </header>
 
         <Work

@@ -22,7 +22,7 @@ export default function Work(props) {
     );
   });
   return (
-    <section>
+    <section className="experience box">
       <h2 className="title">Work Experiences</h2>
       <ul className="work-elements">{workElements}</ul>
     </section>
